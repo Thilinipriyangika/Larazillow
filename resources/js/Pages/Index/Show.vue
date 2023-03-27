@@ -1,6 +1,6 @@
 <template>
     <div>Show</div>
-    <link href="/"> Main Page </link>
+    <Link href="/"> Main Page</Link>
 </template>
 
 <script setup>
@@ -8,3 +8,4 @@
 import {Link} from '@inertiajs/inertia-vue3'
 
 </script>
+

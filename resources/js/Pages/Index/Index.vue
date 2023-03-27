@@ -1,12 +1,16 @@
 <template>
-    <div>Index</div>
+        <div>Index</div>
+    <Link href="/hello">Show Page</Link>
     <div>
-    <link href="/hello">Show Page</link>
+        The message is {{ message }}
     </div>
 </template>
 
 <script setup>
-
 import {Link} from '@inertiajs/inertia-vue3'
+defineProps({
+    message: String
+})
 
 </script>
+
