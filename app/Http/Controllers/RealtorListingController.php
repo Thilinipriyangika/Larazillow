@@ -13,7 +13,7 @@ class RealtorListingController extends Controller
     {
         $this->authorizeResource(Listing::class, 'listing');
     }
-    
+
     public function index(Request $request)
     {
         return inertia(
