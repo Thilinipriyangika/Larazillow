@@ -25,6 +25,10 @@ Route::get('/hello', [IndexController::class, 'show'])
 Route::resource('listing', ListingController::class)
     ->only(['index','show']);
 
+Route::resource('listing.offer', \App\Http\Controllers\ListingOfferController::class)
+    ->middleware('auth')
+    ->only(['store']);
+
 Route::get('login', [AuthController::class, 'create'])
     ->name('login');
 Route::post('login', [AuthController::class, 'store'])
