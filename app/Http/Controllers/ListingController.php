@@ -39,7 +39,7 @@ class ListingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show(Listing $listing)
@@ -49,11 +49,14 @@ class ListingController extends Controller
         // }
         // $this->authorize('view', $listing);
         $listing->load(['images']);
+        $offer = !Auth::user() ?
+            null : $listing->offers()->byMe()->first();
 
         return inertia(
             'Listing/Show',
             [
-                'listing' => $listing
+                'listing' => $listing,
+                'offerMade' => $offer
             ]
         );
     }
