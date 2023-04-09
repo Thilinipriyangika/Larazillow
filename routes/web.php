@@ -52,6 +52,12 @@ Route::prefix('realtor')
            // ->only(['index', 'destroy','edit', 'update','create','store'])
         ->withTrashed();
 
+        Route::name('offer.accept')
+            ->put(
+                'offer/{offer}/accept',
+                \App\Http\Controllers\RealtorListingAcceptOfferController::class
+            );
+
         Route::resource('listing.image',\App\Http\Controllers\RealtorListingImageController::class)
             ->only(['create','store','destroy']);
     });
